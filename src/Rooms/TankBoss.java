@@ -2,12 +2,13 @@ package Rooms;
 
 import People.Person;
 
-public class TankBoss {
+public class TankBoss extends Room {
     Person occupant;
     int xLoc,yLoc;
 
-    public Room(int x, int y)
+    public TankBoss(int x, int y)
     {
+        super (x, y);
         xLoc = x;
         yLoc = y;
     }
