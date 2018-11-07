@@ -2,11 +2,11 @@ package Rooms;
 
 import People.Person;
 
-public class GuitarRoom extends Room {
+public class KnifeBlock extends Room {
     Person occupant;
     int xLoc,yLoc;
 
-    public GuitarRoom(int x, int y)
+    public KnifeBlock(int x, int y)
     {
         super(x,y);
         xLoc = x;
@@ -19,16 +19,16 @@ public class GuitarRoom extends Room {
      */
     public void enterRoom(Person x)
     {
-        System.out.println("You're on a bustling city block, different types of people everywhere!");
-        System.out.println("There's a hippie looking dude playing a guitar for change");
-        System.out.println("If you talk to him, maybe he'll give it to you");
+        System.out.println("As you walk through the huge crowd, you spot a knife on the ground!");
+        System.out.println("Who would be stupid enough to drop a knife in the city? And nobody's picking it up?");
+        System.out.println("Guess it's yours");
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
     }
     public void whatYouSee(Person x)
     {
-        System.out.println("You hear some acoustic guitar playing on the next block");
+        System.out.println("Just a crowd");
     }
 
     /**

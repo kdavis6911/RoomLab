@@ -24,6 +24,10 @@ public class WinningRoom extends Room
 		System.out.println("You found the winning room! Ten points for Gryffindor.");
 		Runner.gameOff();
 	}
-	
+	public void whatYouSee(Person x)
+	{
+		System.out.println("A huge black thing and a huge red thing are on this block");
+	}
+
 
 }

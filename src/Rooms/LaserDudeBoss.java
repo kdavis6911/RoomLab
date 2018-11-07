@@ -28,6 +28,10 @@ public class LaserDudeBoss extends Room {
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
     }
+    public void whatYouSee(Person x)
+    {
+        System.out.println("Through the crowd, you see an alleyway and something silver in it, treasure maybe?");
+    }
 
     /**
      * Removes the player from the room.

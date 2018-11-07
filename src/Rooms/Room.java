@@ -18,10 +18,14 @@ public class Room {
 	 */
 	public void enterRoom(Person x)
 	{
-		System.out.println("This city block is empty! Try moving somewhere else");
+		System.out.println("This city block is empty! Try going somewhere else");
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+	}
+	public void whatYouSee(Person x)
+	{
+		System.out.println("There's nobody on that block");
 	}
 
 	/**

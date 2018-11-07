@@ -2,12 +2,13 @@ package Rooms;
 
 import People.Person;
 
-public class AliensBoss {
+public class AliensBoss extends Room {
     Person occupant;
     int xLoc,yLoc;
 
-    public Room(int x, int y)
+    public AliensBoss(int x, int y)
     {
+        super(x,y);
         xLoc = x;
         yLoc = y;
     }
@@ -25,6 +26,10 @@ public class AliensBoss {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
+    }
+    public void whatYouSee(Person x)
+    {
+        System.out.println("Some blurry gray things are standing there, eerily, try preparing before you approach them");
     }
 
     /**

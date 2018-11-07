@@ -1,10 +1,7 @@
 package Game;
 
 import People.Person;
-import Rooms.LaserDudeBoss;
-import Rooms.Room;
-import Rooms.TankBoss;
-import Rooms.WinningRoom;
+import Rooms.*;
 
 import java.util.Scanner;
 
@@ -31,13 +28,60 @@ public class Runner {
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x, y);
 
-		int x = (int)(Math.random()*building.length);
-		int y = (int)(Math.random()*building.length);
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
 		building[x][y] = new TankBoss(x, y);
 
-		int x = (int)(Math.random()*building.length);
-		int y = (int)(Math.random()*building.length);
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
 		building[x][y] = new LaserDudeBoss(x, y);
+
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
+		building[x][y] = new NinjaHouseBoss(x, y);
+
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
+		building[x][y] = new AliensBoss(x, y);
+
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
+		building[x][y] = new BomberPlaneBoss(x, y);
+
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
+		building[x][y] = new AdamSandlerBoss(x, y);
+
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
+		building[x][y] = new GuitarRoom(x, y);
+
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
+		building[x][y] = new OptimusPrimeBlock(x, y);
+
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
+		building[x][y] = new BazookaBlock(x, y);
+
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
+		building[x][y] = new KnifeBlock(x, y);
+
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
+		building[x][y] = new MonkeyRoom(x, y);
+
+		x = (int)(Math.random()*building.length);
+		y = (int)(Math.random()*building.length);
+		building[x][y] = new BandageRoom(x, y);
+
+		x = 0;
+		y = 0;
+		building[x][y] = new FlashlightRoom(x, y);
+
+
+
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
@@ -45,8 +89,17 @@ public class Runner {
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
-			System.out.println("Where would you like to move? (Choose N, S, E, W)");
+			System.out.println("What would you like to do?");
 			String move = in.nextLine();
+			if(Looking(move, player1, building))
+			{
+				System.out.print("");
+
+			}
+			else {
+				System.out.println("You're at the edge of the city, You're staring at a barren desert right now");
+			}
+
 			if(validMove(move, player1, building))
 			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
@@ -55,7 +108,7 @@ public class Runner {
 			else {
 				System.out.println("Please choose a valid move.");
 			}
-			
+
 			
 		}
 		in.close();
@@ -121,6 +174,110 @@ public class Runner {
 			default:
 				break;
 					
+		}
+		return true;
+	}
+	public static boolean Looking(String move, Person p, Room[][] map)
+	{
+		move = move.toLowerCase().trim();
+		switch (move) {
+			case "look n":
+				if (p.getxLoc() > 0)
+				{
+					map[p.getxLoc()-1][p.getyLoc()].whatYouSee(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "look e":
+				if (p.getyLoc()< map[p.getyLoc()].length -1)
+				{
+					map[p.getxLoc()][p.getyLoc() + 1].whatYouSee(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+
+			case "look s":
+				if (p.getxLoc() < map.length - 1)
+				{
+					map[p.getxLoc()+1][p.getyLoc()].whatYouSee(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+
+			case "look w":
+				if (p.getyLoc() > 0)
+				{
+					map[p.getxLoc()][p.getyLoc()-1].whatYouSee(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			default:
+				break;
+
+		}
+		return true;
+	}
+	public static boolean Using(String move, Person p, Room[][] map)
+	{
+		move = move.toLowerCase().trim();
+		switch (move) {
+			case "look n":
+				if (p.getxLoc() > 0)
+				{
+					map[p.getxLoc()-1][p.getyLoc()].whatYouSee(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "look e":
+				if (p.getyLoc()< map[p.getyLoc()].length -1)
+				{
+					map[p.getxLoc()][p.getyLoc() + 1].whatYouSee(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+
+			case "look s":
+				if (p.getxLoc() < map.length - 1)
+				{
+					map[p.getxLoc()+1][p.getyLoc()].whatYouSee(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+
+			case "look w":
+				if (p.getyLoc() > 0)
+				{
+					map[p.getxLoc()][p.getyLoc()-1].whatYouSee(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			default:
+				break;
+
 		}
 		return true;
 	}

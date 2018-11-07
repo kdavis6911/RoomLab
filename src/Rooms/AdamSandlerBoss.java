@@ -2,12 +2,13 @@ package Rooms;
 
 import People.Person;
 
-public class AdamSandlerBoss {
+public class AdamSandlerBoss extends Room {
     Person occupant;
     int xLoc,yLoc;
 
-    public Room(int x, int y)
+    public AdamSandlerBoss(int x, int y)
     {
+        super(x, y);
         xLoc = x;
         yLoc = y;
     }
@@ -25,6 +26,10 @@ public class AdamSandlerBoss {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
+    }
+    public void whatYouSee(Person x)
+    {
+        System.out.println("There's a crowd, but you hear of someone famous coming to this city, he could be on that block");
     }
 
     /**

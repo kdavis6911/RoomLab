@@ -2,12 +2,13 @@ package Rooms;
 
 import People.Person;
 
-public class OptimusPrimeBlock {
+public class OptimusPrimeBlock extends Room {
     Person occupant;
     int xLoc,yLoc;
 
-    public Room(int x, int y)
+    public OptimusPrimeBlock(int x, int y)
     {
+        super(x,y);
         xLoc = x;
         yLoc = y;
     }
@@ -25,6 +26,10 @@ public class OptimusPrimeBlock {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
+    }
+    public void whatYouSee(Person x)
+    {
+        System.out.println("Just a bunch of rubble, why was this block destroyed?");
     }
 
     /**
