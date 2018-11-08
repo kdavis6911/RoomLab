@@ -30,7 +30,7 @@ public class LaserDudeBoss extends Room {
     }
     public void whatYouSee(Person x)
     {
-        System.out.println("Through the crowd, you see an alleyway and something silver in it, treasure maybe?");
+        System.out.println("Through the crowd, you see an alleyway and a huge silver thing in it, treasure maybe? Try preparing before checking out some random silver thing in an alleyway");
     }
 
     /**

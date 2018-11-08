@@ -1,4 +1,4 @@
-package Boss;
+package Bosses;
 
 public class Tank {
 }

@@ -84,9 +84,15 @@ public class Runner {
 
 		 
 		 //Setup player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0,0);
-		building[0][0].enterRoom(player1);
+		String[] inventory = new String[7];
+		Person player1 = new Person("FirstName", "FamilyName", 0,0, 30, inventory);
 		Scanner in = new Scanner(System.in);
+		System.out.println("You're in a city that you want to blow up. You remember putting bombs on a certain block but you forgot where they were");
+		System.out.println("Your codes got stolen by 6 people in the city, and they won't give them back without a fight");
+		System.out.println("Go around the city, get some weapons, and destroy the people who have your codes so you can blow everything up!");
+		System.out.println("Right now you can only look at your surrounding blocks and move, type n, s, e, w to move, and type look n, look e, etc to examine the next block in that direction");
+		System.out.println("");
+		building[0][0].enterRoom(player1);
 		while(gameOn)
 		{
 			System.out.println("What would you like to do?");

@@ -26,6 +26,10 @@ public class TankBoss extends Room {
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
     }
+    public void whatYouSee(Person x)
+    {
+        System.out.println("What the? A tank? Uh oh, it just shot a missile at you! It hit you for 5 damage");
+    }
 
     /**
      * Removes the player from the room.

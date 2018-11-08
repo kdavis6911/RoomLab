@@ -28,7 +28,7 @@ public class NinjaHouseBoss extends Room {
     }
     public void whatYouSee(Person x)
     {
-        System.out.println("A small house looms eerily in the distance, along with some grass and a tree");
+        System.out.println("A small house looms eerily in the distance, along with some grass and a tree. You might wanna prepare, because you have no idea what could be in there");
     }
 
     /**

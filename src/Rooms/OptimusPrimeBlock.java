@@ -29,7 +29,7 @@ public class OptimusPrimeBlock extends Room {
     }
     public void whatYouSee(Person x)
     {
-        System.out.println("Just a bunch of rubble, why was this block destroyed?");
+        System.out.println("Just a bunch of rubble, why was this block destroyed? Check it out, why not?");
     }
 
     /**
