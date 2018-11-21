@@ -239,20 +239,20 @@ public class Runner {
 	{
 		move = move.toLowerCase().trim();
 		switch (move) {
-			case "look n":
+			case "Use bandage":
 				if (p.getxLoc() > 0)
 				{
-					map[p.getxLoc()-1][p.getyLoc()].whatYouSee(p);
+					map[p.getxLoc()][p.getyLoc()].bandageUse(p);
 					return true;
 				}
 				else
 				{
 					return false;
 				}
-			case "look e":
+			case "Use Bazooka":
 				if (p.getyLoc()< map[p.getyLoc()].length -1)
 				{
-					map[p.getxLoc()][p.getyLoc() + 1].whatYouSee(p);
+					map[p.getxLoc()][p.getyLoc()].bazookaUse(p);
 					return true;
 				}
 				else
@@ -260,10 +260,10 @@ public class Runner {
 					return false;
 				}
 
-			case "look s":
+			case "Use Flashlight":
 				if (p.getxLoc() < map.length - 1)
 				{
-					map[p.getxLoc()+1][p.getyLoc()].whatYouSee(p);
+					map[p.getxLoc()][p.getyLoc()].flashlightUse(p);
 					return true;
 				}
 				else
@@ -271,10 +271,90 @@ public class Runner {
 					return false;
 				}
 
-			case "look w":
+			case "Use guitar":
 				if (p.getyLoc() > 0)
 				{
-					map[p.getxLoc()][p.getyLoc()-1].whatYouSee(p);
+					map[p.getxLoc()][p.getyLoc()].guitarUse(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "EABCCA":
+				if (p.getyLoc() > 0)
+				{
+					map[p.getxLoc()][p.getyLoc()].sleep(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "Use Knife":
+				if (p.getyLoc() > 0)
+				{
+					map[p.getxLoc()][p.getyLoc()].knifeUse(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "Use Laser gun":
+				if (p.getyLoc() > 0)
+				{
+					map[p.getxLoc()][p.getyLoc()].lasergunUse(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "Use Monkey":
+				if (p.getyLoc() > 0)
+				{
+					map[p.getxLoc()][p.getyLoc()].monkeyUse(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "SCREECH":
+				if (p.getyLoc() > 0)
+				{
+					map[p.getxLoc()][p.getyLoc()].annoying(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "Use shuriken":
+				if (p.getyLoc() > 0)
+				{
+					map[p.getxLoc()][p.getyLoc()].shirukenUse(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "Use optimus Prime":
+				if (p.getyLoc() > 0)
+				{
+					map[p.getxLoc()][p.getyLoc()].optimusprimeUse(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "Use tank":
+				if (p.getyLoc() > 0)
+				{
+					map[p.getxLoc()][p.getyLoc()].guitarUse(p);
 					return true;
 				}
 				else
